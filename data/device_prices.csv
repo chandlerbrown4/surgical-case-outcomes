@@ -1,0 +1,5 @@
+device_id,effective_from,effective_to,unit_price_cents,currency,price_source
+MESH-A,2025-01-01,,12000,USD,reconciled_invoice
+MESH-B,2025-01-01,,17500,USD,reconciled_invoice
+FIX-1,2025-01-01,2025-07-01,2100,USD,reconciled_invoice
+FIX-1,2025-07-01,,2400,USD,reconciled_invoice

@@ -1,0 +1,114 @@
+case_id,patient_id,service_date,procedure,mesh,prior_repair,defect_cm,preoperative_stratum,observed_through_as_of,diagnosed_on_as_of,outcome_deadline,scope_exclusion,cost_status,outcome_status,implant_line_count,unmatched_implant_line_count,other_cost_cents,missing_other_cost_categories,case_total_cents,recurrence_by_day_365,preoperative_diabetes
+S001,P001,2025-01-18,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes yes",2026-02-07,2026-01-18,2026-01-18,,included,included,2,0,414250,,430450,1,yes
+S002,P002,2025-02-04,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-02-24,2025-06-13,2026-02-04,,included,included,2,0,416250,,434550,1,no
+S003,P003,2025-02-21,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-03-13,2025-07-19,2026-02-21,,included,included,2,0,418250,,432350,1,no
+S004,P004,2025-03-10,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-03-30,2025-08-24,2026-03-10,,included,included,2,0,420250,,436450,1,no
+S005,P005,2025-03-27,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-04-16,2026-03-28,2026-03-27,,included,included,2,0,422250,,440550,0,no
+S006,P006,2025-04-13,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes yes",2026-05-03,,2026-04-13,,included,included,2,0,424250,,438350,0,yes
+S007,P007,2025-04-30,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-05-20,,2026-04-30,,included,included,2,0,426250,,442450,0,no
+S008,P008,2025-05-17,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-06-06,,2026-05-17,,included,included,2,0,428250,,446550,0,no
+S009,P009,2025-06-03,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-06-23,,2026-06-03,,included,included,2,0,422600,,436700,0,no
+S010,P010,2025-06-20,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-07-10,,2026-06-20,,included,included,2,0,424600,,440800,0,no
+S011,P011,2025-07-07,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes yes",2026-07-27,,2026-07-07,,unpriced implant lines,included,3,1,413950,,,0,yes
+S012,P012,2025-07-24,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-08-13,,2026-07-24,,included,included,2,0,415950,,430350,0,no
+S013,P013,2025-08-10,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-08-30,,2026-08-10,,included,included,2,0,417950,,434750,0,no
+S014,P014,2025-08-27,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-09-16,,2026-08-27,,included,included,2,0,419950,,439150,0,no
+S015,P015,2025-09-13,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-10-03,,2026-09-13,,included,included,2,0,421950,,436350,0,no
+S016,P016,2025-09-30,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes yes",2026-10-20,,2026-09-30,,included,included,2,0,423950,,440750,0,yes
+S017,P017,2025-10-17,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-11-06,,2026-10-17,,included,included,2,0,425950,,445150,0,no
+S018,P018,2025-01-04,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-01-24,,2026-01-04,,included,included,2,0,420300,,434400,0,no
+S019,P019,2025-01-21,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-02-10,,2026-01-21,,included,included,2,0,422300,,438500,0,no
+S020,P020,2025-02-07,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-02-27,,2026-02-07,,included,included,2,0,424300,,442600,0,no
+S021,P021,2025-02-24,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes yes",2026-03-16,,2026-02-24,,included,included,2,0,426300,,440400,0,yes
+S022,P022,2025-03-13,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-04-02,,2026-03-13,,included,included,2,0,415650,,431850,0,no
+S023,P023,2025-03-30,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-04-19,,2026-03-30,,included,included,2,0,417650,,435950,0,no
+S024,P024,2025-04-16,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-05-06,,2026-04-16,,included,included,2,0,419650,,433750,0,no
+S025,P025,2025-05-03,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-05-23,,2026-05-03,,included,included,2,0,421650,,437850,0,no
+S026,P026,2025-05-20,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes yes",2026-06-09,,2026-05-20,,included,included,2,0,423650,,441950,0,yes
+S027,P027,2025-06-06,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-06-26,,2026-06-06,,included,included,2,0,418000,,432100,0,no
+S028,P028,2025-06-23,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-07-13,,2026-06-23,,included,included,2,0,420000,,436200,0,no
+S029,P029,2025-07-10,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-07-30,,2026-07-10,,included,included,2,0,422000,,441200,0,no
+S030,P030,2025-07-27,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-08-16,,2026-07-27,,included,included,2,0,424000,,438400,0,no
+S031,P031,2025-08-13,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes yes",2026-09-02,,2026-08-13,,included,included,2,0,426000,,442800,0,yes
+S032,P032,2025-08-30,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-09-19,,2026-08-30,,included,included,2,0,428000,,447200,0,no
+S033,P033,2025-09-16,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-10-06,,2026-09-16,,included,included,2,0,417350,,431750,0,no
+S034,P034,2025-10-03,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-10-23,,2026-10-03,,included,included,2,0,419350,,436150,0,no
+S035,P035,2025-10-20,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-11-09,,2026-10-20,,included,included,2,0,421350,,440550,0,no
+S036,P036,2025-01-07,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes yes",2026-01-27,,2026-01-07,,included,included,2,0,415700,,429800,0,yes
+S037,P037,2025-01-24,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-02-13,,2026-01-24,,included,included,2,0,417700,,433900,0,no
+S038,P038,2025-02-10,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-03-02,,2026-02-10,,included,included,2,0,419700,,438000,0,no
+S039,P039,2025-02-27,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-03-19,,2026-02-27,,included,included,2,0,421700,,435800,0,no
+S040,P040,2025-03-16,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-04-05,,2026-03-16,,included,included,2,0,423700,,439900,0,no
+S041,P041,2025-04-02,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes yes,2026-04-22,2026-04-02,2026-04-02,,included,included,2,0,439950,,458250,1,yes
+S042,P042,2025-04-19,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes no,2026-05-09,2025-08-26,2026-04-19,,included,included,2,0,441950,,456050,1,no
+S043,P043,2025-05-06,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes yes,2026-05-26,2025-10-01,2026-05-06,,included,included,2,0,443950,,460150,1,yes
+S044,P044,2025-05-23,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes no,2026-06-12,2025-11-06,2026-05-23,,included,included,2,0,433300,,451600,1,no
+S045,P045,2025-06-09,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes yes,2026-06-29,2026-06-10,2026-06-09,,included,included,2,0,427650,,441750,0,yes
+S046,P046,2025-06-26,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes no,2026-07-16,,2026-06-26,,included,included,2,0,429650,,445850,0,no
+S047,P047,2025-07-13,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes yes,2026-08-02,,2026-07-13,,included,included,2,0,431650,,450850,0,yes
+S048,P048,2025-07-30,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes no,2026-08-19,,2026-07-30,,included,included,2,0,433650,,448050,0,no
+S049,P049,2025-08-16,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes yes,2026-09-05,,2026-08-16,,included,included,2,0,435650,,452450,0,yes
+S050,P050,2025-09-02,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes no,2026-09-22,,2026-09-02,,included,included,2,0,437650,,456850,0,no
+S051,P051,2025-09-19,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes yes,2026-10-09,,2026-09-19,,included,included,2,0,439650,,454050,0,yes
+S052,P052,2025-10-06,elective ventral hernia repair,MESH-A,True,6,Prior repair or ≥5 cm · diabetes no,2026-10-26,,2026-10-06,,included,included,2,0,441650,,458450,0,no
+S053,P053,2025-10-23,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes yes",2026-11-12,2026-10-23,2026-10-23,,included,included,2,0,429400,,454100,1,yes
+S054,P054,2025-01-10,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes no",2026-01-30,2026-01-11,2026-01-10,,included,included,2,0,423750,,443350,0,no
+S055,P055,2025-01-27,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes yes",2026-02-16,,2026-01-27,,included,included,2,0,413100,,434800,0,yes
+S056,P056,2025-02-13,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes no",2026-03-05,,2026-02-13,,included,included,2,0,415100,,438900,0,no
+S057,P057,2025-03-02,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes yes",2026-03-22,,2026-03-02,,included,included,2,0,417100,,436700,0,yes
+S058,P058,2025-03-19,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes no",2026-04-08,,2026-03-19,,included,included,2,0,419100,,440800,0,no
+S059,P059,2025-04-05,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes yes",2026-04-25,,2026-04-05,,included,included,2,0,421100,,444900,0,yes
+S060,P060,2025-04-22,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes no",2026-05-12,,2026-04-22,,included,included,2,0,423100,,442700,0,no
+S061,P061,2025-05-09,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes yes",2026-05-29,,2026-05-09,,included,included,2,0,425100,,446800,0,yes
+S062,P062,2025-05-26,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes no",2026-06-15,,2026-05-26,,included,included,2,0,427100,,450900,0,no
+S063,P063,2025-06-12,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes yes",2026-07-02,,2026-06-12,,included,included,2,0,421450,,441050,0,yes
+S064,P064,2025-06-29,elective ventral hernia repair,MESH-B,False,3,"No prior repair, <5 cm · diabetes no",2026-07-19,,2026-06-29,,included,included,2,0,423450,,445150,0,no
+S065,P065,2025-07-16,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-08-05,2026-07-16,2026-07-16,,included,included,2,0,439700,,464400,1,yes
+S066,P066,2025-08-02,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-08-22,2025-12-09,2026-08-02,,included,included,2,0,429050,,448950,1,yes
+S067,P067,2025-08-19,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-09-08,2026-01-14,2026-08-19,,included,included,2,0,431050,,453350,1,no
+S068,P068,2025-09-05,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-09-25,2026-02-19,2026-09-05,,included,included,2,0,433050,,457750,1,yes
+S069,P069,2025-09-22,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-10-12,2026-03-27,2026-09-22,,included,included,2,0,435050,,454950,1,yes
+S070,P070,2025-10-09,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-10-29,2026-05-02,2026-10-09,,included,included,2,0,437050,,459350,1,no
+S071,P071,2025-10-26,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-11-15,2026-06-07,2026-10-26,,included,included,2,0,439050,,463750,1,yes
+S072,P072,2025-01-13,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-02-02,2025-09-13,2026-01-13,,included,included,2,0,433400,,453000,1,yes
+S073,P073,2025-01-30,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-02-19,2025-10-19,2026-01-30,,included,included,2,0,435400,,457100,1,no
+S074,P074,2025-02-16,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-03-08,2026-02-17,2026-02-16,,included,included,2,0,437400,,461200,0,yes
+S075,P075,2025-03-05,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-03-25,,2026-03-05,,included,included,2,0,439400,,459000,0,yes
+S076,P076,2025-03-22,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-04-11,,2026-03-22,,included,included,2,0,441400,,463100,0,no
+S077,P077,2025-04-08,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-04-28,,2026-04-08,,included,included,2,0,430750,,454550,0,yes
+S078,P078,2025-04-25,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-05-15,,2026-04-25,,included,included,2,0,432750,,452350,0,yes
+S079,P079,2025-05-12,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-06-01,,2026-05-12,,included,included,2,0,434750,,456450,0,no
+S080,P080,2025-05-29,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-06-18,,2026-05-29,,included,included,2,0,436750,,460550,0,yes
+S081,P081,2025-06-15,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-07-05,,2026-06-15,,included,included,2,0,431100,,450700,0,yes
+S082,P082,2025-07-02,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-07-22,,2026-07-02,,included,included,2,0,433100,,455400,0,no
+S083,P083,2025-07-19,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-08-08,,2026-07-19,,included,included,2,0,435100,,459800,0,yes
+S084,P084,2025-08-05,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-08-25,,2026-08-05,,included,included,2,0,437100,,457000,0,yes
+S085,P085,2025-08-22,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-09-11,,2026-08-22,,included,included,2,0,439100,,461400,0,no
+S086,P086,2025-09-08,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-09-28,,2026-09-08,,included,included,2,0,441100,,465800,0,yes
+S087,P087,2025-09-25,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-10-15,,2026-09-25,,included,included,2,0,443100,,463000,0,yes
+S088,P088,2025-10-12,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-11-01,,2026-10-12,,included,included,2,0,432450,,454750,0,no
+S089,P089,2025-10-29,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-11-18,,2026-10-29,,included,included,2,0,434450,,459150,0,yes
+S090,P090,2025-01-16,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-02-05,,2026-01-16,,included,included,2,0,428800,,448400,0,yes
+S091,P091,2025-02-02,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-02-22,,2026-02-02,,included,included,2,0,430800,,452500,0,no
+S092,P092,2025-02-19,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-03-11,,2026-02-19,,included,included,2,0,432800,,456600,0,yes
+S093,P093,2025-03-08,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-03-28,,2026-03-08,,included,included,2,0,434800,,454400,0,yes
+S094,P094,2025-03-25,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-04-14,,2026-03-25,,included,included,2,0,436800,,458500,0,no
+S095,P095,2025-04-11,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-05-01,,2026-04-11,,included,included,2,0,438800,,462600,0,yes
+S096,P096,2025-04-28,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-05-18,,2026-04-28,,included,included,2,0,440800,,460400,0,yes
+S097,P097,2025-05-15,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-06-04,,2026-05-15,,included,included,2,0,442800,,464500,0,no
+S098,P098,2025-06-01,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-06-21,,2026-06-01,,included,included,2,0,444800,,468600,0,yes
+S099,P099,2025-06-18,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes yes,2026-07-08,,2026-06-18,,included,included,2,0,426500,,446100,0,yes
+S100,P100,2025-07-05,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-07-25,,2026-07-05,,included,included,2,0,428500,,450800,0,no
+S101,P101,2025-07-22,elective ventral hernia repair,MESH-B,True,9,"Prior repair, ≥8 cm · diabetes yes",2026-08-11,2026-07-22,2026-07-22,,included,included,2,0,444750,,469450,1,yes
+S102,P102,2025-08-08,elective ventral hernia repair,MESH-B,True,9,"Prior repair, ≥8 cm · diabetes yes",2026-08-28,2025-12-15,2026-08-08,,included,included,2,0,446750,,466650,1,yes
+S103,P103,2025-08-25,elective ventral hernia repair,MESH-B,True,9,"Prior repair, ≥8 cm · diabetes yes",2026-09-14,2026-01-20,2026-08-25,,included,included,2,0,448750,,471050,1,yes
+S104,P104,2025-09-11,elective ventral hernia repair,MESH-B,True,9,"Prior repair, ≥8 cm · diabetes yes",2026-10-01,2026-09-12,2026-09-11,,included,included,2,0,450750,,475450,0,yes
+S105,P105,2025-09-28,elective ventral hernia repair,MESH-B,True,9,"Prior repair, ≥8 cm · diabetes yes",2026-10-18,,2026-09-28,,included,included,2,0,452750,,472650,0,yes
+S106,P106,2025-10-15,elective ventral hernia repair,MESH-B,True,9,"Prior repair, ≥8 cm · diabetes yes",2026-11-04,,2026-10-15,,included,included,2,0,454750,,477050,0,yes
+S107,P107,2025-01-02,elective ventral hernia repair,MESH-A,False,4,"No prior repair, <5 cm · diabetes no",2025-07-21,2025-05-22,2026-01-02,,included,follow-up short of 365 days,2,0,433000,,451300,,no
+S108,P108,2025-01-19,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2025-08-17,,2026-01-19,,included,follow-up short of 365 days,2,0,436850,,456450,,no
+S109,P109,2025-02-05,elective ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,,,2026-02-05,,included,no follow-up record,2,0,438850,,460550,,no
+S110,P110,2026-07-01,elective ventral hernia repair,MESH-A,False,3,"No prior repair, <5 cm · diabetes no",2026-10-09,,2027-07-01,,included,window not mature,2,0,413950,,433150,,no
+S111,P111,2025-03-11,elective ventral hernia repair,MESH-A,,,,2026-03-31,,2026-03-11,missing preoperative factors,missing preoperative factors,missing preoperative factors,2,0,415950,,430050,,unknown
+S112,P112,2025-03-28,emergency ventral hernia repair,MESH-B,True,6,Prior repair or ≥5 cm · diabetes no,2026-04-17,,2026-03-28,outside procedure scope,outside procedure scope,outside procedure scope,2,0,432200,,453900,,no
+S113,P113,2025-04-14,elective ventral hernia repair,MESH-A,False,3,,2026-05-04,,2026-04-14,unknown preoperative diabetes status,unknown preoperative diabetes status,unknown preoperative diabetes status,2,0,419950,,438250,,unknown

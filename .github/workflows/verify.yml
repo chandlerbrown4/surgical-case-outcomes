@@ -1,0 +1,22 @@
+name: Verify demo
+on: [push, pull_request]
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run the test suite
+        run: python3 -m unittest discover -s tests -v
+      - name: Run the documented demo
+        run: python3 -m surgical
+      - name: Check the published example against the demo
+        run: git diff --exit-code -- outputs
