@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .analysis import build_cases, compare
 from .fixture import make_fixture
+from .matching import write_matching_review
 from .prices import load_catalog
 from .report import write_outputs
 
@@ -28,6 +29,7 @@ def main() -> None:
     cost = compare(cases, lambda case: case.cost)
     recurrence = compare(cases, lambda case: case.outcome)
     write_outputs(args.output, args.prices.name, catalog.sha256, cases, data, cost, recurrence)
+    write_matching_review(args.output, ROOT / "data" / "matching", catalog)
     print(f"Surgical case analysis written to {args.output.resolve() / 'report.md'}")
 
 

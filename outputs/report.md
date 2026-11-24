@@ -5,6 +5,9 @@
 The comparison asks how recorded index surgery cost and 365-day recurrence differ between
 two fictional mesh groups when both are evaluated on the same mix of measured preoperative factors.
 
+The [companion coding and matching example](matching_review.md) follows a separate fictional
+inguinal repair series from an operative label through billing evidence and 30-day follow-up.
+
 ## Index surgery cost
 
 Cost combines matched implant purchase prices and recorded operating room, anesthesia and
@@ -121,7 +124,7 @@ establish clinical or purchasing performance.
 
 ## Pack-price error
 
-In the synthetic invoice, a pack of 6 MESH-A implants costs $720.00, or $120.00 per implant. Case S001 (2025-01-18) used 1. The error scenario treats the pack price as the per-implant price on that one line. The matched row (CSV line 2) prices each implant at $120.00. Holding other lines and case costs fixed, the matched total is **$4,304.50** and the erroneous total is **$4,904.50** (change +600.00 USD).
+In the standalone pack example, a pack of 6 MESH-A implants costs $720.00, or $120.00 per implant. Case S001 (2025-01-18) used 1. The error scenario treats the pack price as the per-implant price on that one line. The matched row (CSV line 2) prices each implant at $120.00. Holding other lines and case costs fixed, the matched total is **$4,304.50** and the erroneous total is **$4,904.50** (change +600.00 USD).
 
 ## Reproducing the audit
 

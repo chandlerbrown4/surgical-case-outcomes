@@ -1,0 +1,20 @@
+case_id,account_id,service_date,operative_label,surgeon,side,mesh,diagnosis_codes,repair_codes,coding_status,unit_price_cents,return_30d
+G01,V01,2025-02-04,Elective laparoscopic inguinal repair,Cedar,right,MESH-A,K40.90,49650,eligible initial repair,12000,0
+G02,V02,2025-02-05,Elective laparoscopic inguinal repair,Cedar,right,MESH-A,K40.90,49650,eligible initial repair,12000,
+G03,V03,2024-12-18,Elective laparoscopic inguinal repair,Cedar,right,MESH-A,K40.90,49650,eligible initial repair,,0
+G04,V04,2025-02-08,Elective laparoscopic inguinal repair,Cedar,right,MESH-B,K40.90,49650,eligible initial repair,17500,1
+G05,V05,2025-02-09,Elective laparoscopic inguinal repair,Cedar,right,MESH-B,K40.90,49650,eligible initial repair,17500,0
+G06,V06,2025-02-12,Elective laparoscopic inguinal repair,Cedar,right,MESH-B,K40.90,49650,eligible initial repair,17500,0
+G07,V07,2025-02-13,Elective laparoscopic inguinal repair,Cedar,right,MESH-B,K40.90,49650,eligible initial repair,17500,
+G08,V08,2025-02-15,Elective laparoscopic inguinal repair,Cedar,right,MESH-B,K40.90,49650,eligible initial repair,17500,
+G09,V09,2025-03-03,Elective laparoscopic inguinal repair,Birch,left,MESH-A,K40.90,49650,eligible initial repair,12000,0
+G10,V10,2025-03-06,Elective laparoscopic inguinal repair,Birch,left,MESH-A,K40.90,49650,eligible initial repair,12000,0
+G11,V11,2025-03-07,Elective laparoscopic inguinal repair,Birch,left,MESH-A,K40.90,49650,eligible initial repair,12000,0
+G12,V12,2025-03-10,Elective laparoscopic inguinal repair,Birch,left,MESH-A,K40.90,49650,eligible initial repair,12000,0
+G13,V13,2025-03-13,Elective laparoscopic inguinal repair,Birch,left,MESH-B,K40.90,49650,eligible initial repair,17500,
+G14,V14,2025-04-02,Elective laparoscopic inguinal repair,Cedar,left,MESH-A,K40.90,49650,eligible initial repair,12000,0
+G15,V15,2025-04-03,Elective laparoscopic inguinal repair,Cedar,left,MESH-A,K40.90,49650,eligible initial repair,12000,0
+G16,V16,2025-04-06,Elective laparoscopic inguinal repair,Cedar,left,MESH-B,K40.90,49650,eligible initial repair,17500,0
+G17,V17,2025-04-09,Elective laparoscopic inguinal repair,Cedar,left,MESH-B,K40.90,49650,eligible initial repair,17500,0
+G18,V18,2025-05-01,Elective laparoscopic inguinal repair,Birch,right,MESH-A,K40.90,49650,eligible initial repair,12000,0
+G19,V19,2025-05-03,Elective laparoscopic inguinal repair,Birch,right,MESH-B,K40.91,49651,excluded recurrent repair,17500,0

@@ -102,7 +102,7 @@ def pack_example(cases: list[Case]) -> str:
     case = next(case for case in cases if case.surgery.case_id == PACK_CASE)
     mesh = next(line for line in case.line_items if line.implant.device_id == "MESH-A")
     base = (
-        f"In the synthetic invoice, a pack of {PACK_EACHES} MESH-A implants costs "
+        f"In the standalone pack example, a pack of {PACK_EACHES} MESH-A implants costs "
         f"{usd(PACK_PRICE_CENTS / 100)}, or {usd(PACK_PRICE_CENTS / PACK_EACHES / 100)} per implant. "
         f"Case {PACK_CASE} ({case.surgery.service_date}) used {mesh.implant.quantity_each}. "
         "The error scenario treats the pack price as the per-implant price on that one line."
@@ -173,6 +173,9 @@ def write_outputs(folder: Path, price_file: str, digest: str, cases: list[Case],
 
 The comparison asks how recorded index surgery cost and 365-day recurrence differ between
 two fictional mesh groups when both are evaluated on the same mix of measured preoperative factors.
+
+The [companion coding and matching example](matching_review.md) follows a separate fictional
+inguinal repair series from an operative label through billing evidence and 30-day follow-up.
 
 ## Index surgery cost
 

@@ -1,5 +1,5 @@
 name: Verify demo
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
 
@@ -20,3 +20,23 @@ jobs:
         run: python3 -m surgical
       - name: Check the published example against the demo
         run: git diff --exit-code -- outputs
+
+  purchasing-handoff:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: surgical-case-outcomes
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/hospital-purchasing-reconciliation
+          path: hospital-purchasing-reconciliation
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Reprice the source order and verify the surgical totals
+        working-directory: surgical-case-outcomes
+        run: python3 examples/check_purchasing_handoff.py
