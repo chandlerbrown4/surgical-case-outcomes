@@ -20,7 +20,9 @@ python3 examples/check_purchasing_handoff.py
 
 The script changes temporary copies of the PO, its replay and the invoice. It runs the purchasing reconciler, verifies the source references in the exported price evidence, and passes the catalog to the surgical CLI. It checks every case against its implanted quantity. Use `--purchasing PATH` for a different checkout location. [Walkthrough code](examples/check_purchasing_handoff.py)
 
-Once both repositories are public under the same GitHub owner, **Actions → Verify demo → Run workflow** runs the handoff as well as the surgical tests. Pushes and pull requests run the standalone surgical checks.
+GitHub Actions verifies the price change using fresh checkouts of both projects. The handoff job checks the new total for S001 and counts every case whose cost changed. [View the verified walkthrough](https://github.com/chandlerbrown4/surgical-case-outcomes/actions/runs/45445859485/job/138629333952) · [Run the workflow](https://github.com/chandlerbrown4/surgical-case-outcomes/actions/workflows/verify.yml)
+
+Choose **Run workflow** to repeat the handoff. Pushes and pull requests run the standalone surgical checks.
 
 ## What counts as a comparable repair?
 
