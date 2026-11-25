@@ -5,7 +5,7 @@ from collections import Counter
 from pathlib import Path
 
 from .analysis import BOOTSTRAP_REPLICATES, MIN_PER_GROUP, Case, Comparison
-from .fixture import AS_OF, GROUPS, PACK_CASE, PACK_EACHES, PACK_PRICE_CENTS, Fixture
+from .fixture import GROUPS, PACK_CASE, PACK_EACHES, PACK_PRICE_CENTS, Fixture
 
 
 def usd(dollars):
@@ -38,8 +38,15 @@ def estimates_table(comparison: Comparison, is_cost: bool) -> str:
             continue
         first, second = map(format_value, item.groups)
         diff = format_value(item.difference, difference=True)
-        low, high = (format_value(value, difference=True) for value in item.interval)
-        rows.append(f"| {label} | {a} | {b} | {first} | {second} | {diff} | {low} to {high} |")
+        interval = "—"
+        if item.interval is not None:
+            interval = " to ".join(format_value(value, difference=True) for value in item.interval)
+        rows.append(f"| {label} | {a} | {b} | {first} | {second} | {diff} | {interval} |")
+    if comparison.crude and comparison.crude.interval is None:
+        rows.extend(["", "The crude interval is unavailable because a mesh group has a single case."])
+    if comparison.adjusted is None:
+        rows.extend(["", f"No stratum has at least {MIN_PER_GROUP} eligible cases in both mesh groups. "
+                     "An adjusted comparison is unavailable for this endpoint."])
     return "\n".join(rows)
 
 
@@ -80,14 +87,14 @@ def cohort_table(cases: list[Case], attribute: str) -> str:
     return "\n".join(rows)
 
 
-def follow_up_bounds(cases: list[Case]) -> str:
+def follow_up_bounds(cases: list[Case], as_of) -> str:
     rows = [
         "| Mesh | Mature n | Known events with complete follow-up | Additional known events | Unknown | Risk bounds |",
         "|---|---:|---:|---:|---:|---:|",
     ]
     for mesh in GROUPS:
         mature = [case for case in cases if case.surgery.mesh == mesh
-                  and not case.exclusion and case.outcome_deadline <= AS_OF]
+                  and not case.exclusion and case.outcome_deadline <= as_of]
         complete_events = sum(case.outcome == 1 for case in mature)
         additional_events = sum(case.outcome is None and case.known_recurrence for case in mature)
         unknown = sum(case.outcome is None and not case.known_recurrence for case in mature)
@@ -128,7 +135,8 @@ def write_csv(path: Path, header, rows):
 
 
 def write_outputs(folder: Path, price_file: str, digest: str, cases: list[Case], data: Fixture,
-                  cost: Comparison, recurrence: Comparison) -> None:
+                  cost: Comparison, recurrence: Comparison, *,
+                  cohort_file: str | None = None, cohort_sha256: str | None = None) -> None:
     folder.mkdir(parents=True, exist_ok=True)
     write_csv(folder / "case_audit.csv", (
         "case_id", "patient_id", "service_date", "procedure", "mesh", "prior_repair", "defect_cm",
@@ -167,9 +175,12 @@ def write_outputs(folder: Path, price_file: str, digest: str, cases: list[Case],
         missing_summary += f", and {len(missing) - 8} more"
     if missing:
         missing_summary = f"Unpriced eligible cases include {missing_summary}. "
+    pack_section = "" if cohort_file else f"## Pack-price error\n\n{pack_example(cases)}\n\n"
+    cohort_source = (f"- Cohort file: `{cohort_file}`\n- Cohort SHA-256: `{cohort_sha256}`\n"
+                     if cohort_file else "")
     report = f"""# Surgical case cost and outcomes
 
-**Synthetic elective ventral hernia repair cohort · {len(cases)} index surgeries · Data cutoff {AS_OF}**
+**Synthetic elective ventral hernia repair cohort · {len(cases)} index surgeries · Data cutoff {data.as_of}**
 
 The comparison asks how recorded index surgery cost and 365-day recurrence differ between
 two fictional mesh groups when both are evaluated on the same mix of measured preoperative factors.
@@ -210,7 +221,7 @@ even with shorter follow-up. The lower bound sets every remaining unknown to no 
 The upper bound sets every unknown to recurrence. These are crude missing-outcome bounds
 conditional on the recorded data, without adjustment or sampling uncertainty.
 
-{follow_up_bounds(cases)}
+{follow_up_bounds(cases, data.as_of)}
 
 ## Cohort accounting
 
@@ -251,13 +262,9 @@ overlap cohort. Diabetes is the sole comorbidity captured in the fixture. Other 
 differences and informative follow-up may bias estimates. This invented sample cannot
 establish clinical or purchasing performance.
 
-## Pack-price error
+{pack_section}## Reproducing the audit
 
-{pack_example(cases)}
-
-## Reproducing the audit
-
-- Catalog file: `{price_file}`
+{cohort_source}- Catalog file: `{price_file}`
 - SHA-256: `{digest}`
 - A match requires the same device and a service date in the half-open effective interval.
   Multiply USD cents per each by quantity, then sum extensions and the other cost lines per case.

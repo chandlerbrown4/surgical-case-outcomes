@@ -84,6 +84,7 @@ class Fixture:
     other_costs: list[OtherCost]
     follow_up: dict[str, FollowUp]
     recurrences: dict[str, Recurrence]
+    as_of: date = AS_OF
 
 
 def make_fixture() -> Fixture:

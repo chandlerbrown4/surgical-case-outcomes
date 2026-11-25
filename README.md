@@ -6,6 +6,8 @@
 
 Of **113 synthetic ventral hernia repairs**, 106 met the criteria for the 365-day recurrence analysis. In those cases, crude recurrence with MESH-B was **8.7 percentage points higher** than with MESH-A. Restricting the comparison to risk groups represented by both meshes reduced the gap to **+5.4 points**. Giving both meshes the same mix of preoperative diabetes and surgical risk reversed the estimate to **−7.0 points**. Its 95% bootstrap interval spans **−23.6 to +9.1 points**, leaving the direction of the difference uncertain.
 
+How much does one record matter? In the overlap group with no prior repair, a defect under 5 cm and no diabetes, MESH-B had **0 recurrences in 6 cases**. Changing one of those six outcomes to a recurrence moves the adjusted difference from **−7.0 to −0.6 points**. Changing two moves it to **+5.7 points**, with the same patients and risk weights. [Case IDs, counts and sensitivity bounds](outputs/event_sensitivity.md) · [Runnable example](examples/event_sensitivity.py)
+
 MESH-B also cost **$148.29 more per surgery** in the crude comparison and **$51.86 more** after adjustment. The cost and recurrence analyses each use the cases eligible for that endpoint. These fictional results illustrate how patient mix changes the comparison and why the estimates cannot establish a clinical preference. [Results, case counts, and sensitivity to missing follow-up](outputs/report.md)
 
 ## Follow a purchase price into the operating room
@@ -22,7 +24,7 @@ The script changes temporary copies of the PO, its replay and the invoice. It ru
 
 GitHub Actions verifies the price change using fresh checkouts of both projects. The handoff job checks the new total for S001 and counts every case whose cost changed. [View the verified walkthrough](https://github.com/chandlerbrown4/surgical-case-outcomes/actions/runs/45445859485/job/138629333952) · [Run the workflow](https://github.com/chandlerbrown4/surgical-case-outcomes/actions/workflows/verify.yml)
 
-Choose **Run workflow** to repeat the handoff. Pushes and pull requests run the standalone surgical checks.
+Each pull request and update to the main branch runs the handoff alongside the standalone checks. Choose **Run workflow** to repeat it on demand.
 
 ## What counts as a comparable repair?
 
@@ -41,12 +43,16 @@ python3 -m surgical --prices /path/to/device_prices.csv --output /path/to/result
 python3 -m unittest discover -s tests
 ```
 
-The default run recreates the checked-in files in [outputs](outputs/).
+The default run recreates the main reports and case-level audit files in [outputs](outputs/). Run `python3 -m examples.event_sensitivity` to print the one- and two-case sensitivity table.
 Set `--output` to keep a custom-price run alongside them.
+
+To try a second cohort, run `python3 -m surgical --cohort data/alternate_cohort.json`. Its three cases exercise a different cutoff, missing price data, and a comparison too small for adjustment. The report is written to `build/cohort/report.md`. [Cohort format and example](docs/cohort-input.md)
 
 ## Eligibility and cost evidence
 
 Each retained diabetes and surgical-risk group needs at least five eligible patients per mesh. Six MESH-B cases fall outside the overlap for each endpoint, and one case with unknown diabetes status is excluded from both analyses. The report also gives bounds for recurrence when follow-up is incomplete. [Cohort accounting](outputs/report.md#cohort-accounting) · [Standardization and precision](outputs/report.md#standardization-and-precision)
+
+In 1,000 simulations with **zero true mesh effect**, risk adjustment reduced the mean crude difference from +10.04 to +0.03 points with complete follow-up. When MESH-B recurrences were less likely to be observed, the mean adjusted difference was −7.23 points. [Calibration assumptions and results](outputs/calibration.md) · [Simulation code](examples/calibration.py)
 
 S011 lacks a complete implant price and remains eligible for the recurrence analysis. S001 shows how copying a six-pack price into a per-implant field can overstate a case by **$600**. [Implant price lineage](outputs/implant_lineage.csv) · [Other cost lines](outputs/other_cost_lines.csv) · [Case audit](outputs/case_audit.csv)
 
