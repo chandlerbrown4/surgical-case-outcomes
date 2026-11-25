@@ -7,7 +7,7 @@ from random import Random
 from statistics import mean, quantiles
 from typing import Callable
 
-from .fixture import AS_OF, GROUPS, OTHER_COST_CATEGORIES, WINDOW_DAYS, Fixture, Implant, Surgery
+from .fixture import GROUPS, OTHER_COST_CATEGORIES, WINDOW_DAYS, Fixture, Implant, Surgery
 from .prices import Catalog, Price
 from .validation import validate_implants
 
@@ -93,8 +93,8 @@ def build_cases(data: Fixture, catalog: Catalog) -> list[Case]:
         recurrence = data.recurrences.get(key)
         if recurrence is not None and recurrence.diagnosed_on < surgery.service_date:
             raise ValueError(f"{key}: recurrence diagnosis precedes index surgery")
-        observed = min(follow_up.observed_through, AS_OF) if follow_up else None
-        diagnosed = recurrence.diagnosed_on if recurrence and recurrence.diagnosed_on <= AS_OF else None
+        observed = min(follow_up.observed_through, data.as_of) if follow_up else None
+        diagnosed = recurrence.diagnosed_on if recurrence and recurrence.diagnosed_on <= data.as_of else None
         deadline = surgery.service_date + timedelta(days=WINDOW_DAYS)
 
         exclusion = ""
@@ -117,7 +117,7 @@ def build_cases(data: Fixture, catalog: Catalog) -> list[Case]:
 
         outcome_status = exclusion or "included"
         if not exclusion:
-            if deadline > AS_OF:
+            if deadline > data.as_of:
                 outcome_status = "window not mature"
             elif observed is None:
                 outcome_status = "no follow-up record"
@@ -149,7 +149,7 @@ class Stratum:
 @dataclass(frozen=True)
 class Estimate:
     groups: tuple[float, float]
-    interval: tuple[float, float]
+    interval: tuple[float, float] | None
 
     @property
     def difference(self) -> float:
@@ -165,10 +165,27 @@ class Comparison:
     adjusted: Estimate | None
 
 
+def pooled_strata(by_stratum: dict[str, tuple[list, list]]) -> list[Stratum]:
+    def in_overlap(cells):
+        return min(map(len, cells)) >= MIN_PER_GROUP
+
+    target_size = sum(sum(map(len, cells)) for cells in by_stratum.values() if in_overlap(cells))
+    return [
+        Stratum(name, cells, sum(map(len, cells)) / target_size if in_overlap(cells) else 0)
+        for name, cells in sorted(by_stratum.items())
+    ]
+
+
+def standardized_means(cells: list[Stratum]) -> tuple[float, float]:
+    return tuple(sum(cell.weight * mean(cell.values[g]) for cell in cells) for g in range(2))
+
+
 def estimate(cells: list[Stratum]) -> Estimate | None:
     if not cells or not all(all(cell.values) for cell in cells):
         return None
-    groups = tuple(sum(cell.weight * mean(cell.values[g]) for cell in cells) for g in range(2))
+    groups = standardized_means(cells)
+    if any(len(group) < 2 for cell in cells for group in cell.values):
+        return Estimate(groups, None)
     rng = Random(527)
     differences = [
         sum(cell.weight * (
@@ -192,14 +209,7 @@ def compare(cases: list[Case], measure: Callable[[Case], float | None]) -> Compa
             by_stratum[case.stratum][group].append(value)
             totals[group].append(value)
 
-    def in_overlap(cells):
-        return min(map(len, cells)) >= MIN_PER_GROUP
-
-    target_size = sum(sum(map(len, cells)) for cells in by_stratum.values() if in_overlap(cells))
-    strata = [
-        Stratum(name, cells, sum(map(len, cells)) / target_size if in_overlap(cells) else 0)
-        for name, cells in sorted(by_stratum.items())
-    ]
+    strata = pooled_strata(by_stratum)
     overlap = [cell for cell in strata if cell.weight]
     overlap_values = tuple([value for cell in overlap for value in cell.values[g]] for g in range(2))
     return Comparison(
